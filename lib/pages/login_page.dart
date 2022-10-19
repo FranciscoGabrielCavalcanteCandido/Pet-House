@@ -25,10 +25,8 @@ class _LoginState extends State<Login> {
           right: 40,
         ),
         child: ListView(children: <Widget>[
-          SizedBox(
-            width: 150,
-            height: 150,
-          ),
+          Image.asset("images/Pet_House-removebg-preview.png",
+              width: 300, height: 200),
           SizedBox(
             height: 20,
           ),
