@@ -10,7 +10,14 @@ class AnimalPage extends StatelessWidget {
         title: const Text('Cadastro de Animal'),
         backgroundColor: Colors.black,
       ),
-      
+      body: Container(
+        padding: EdgeInsets.only(
+          top: 200,
+          left: 40,
+          right: 40,
+        ),
+        
+      ),
     );
   }
 }
