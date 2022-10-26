@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pet_house/banco/entidades/dono.dart';
 import 'package:pet_house/pages/animal_page.dart';
+import 'package:pet_house/pages/dono_page.dart';
+import 'package:pet_house/pages/home_page.dart';
 import 'package:pet_house/pages/login_page.dart';
 
 void main() {
@@ -13,16 +16,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: /* AnimalPage(),*/
-          Login(
-        title: 'Pet House',
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        routes: {
+          '/': (context) => Login(
+                title: "Pet House",
+              ),
+          './cadastroAnimal': (context) => AnimalPage(),
+          './cadastroDono': (context) => DonoPage(),
+          './paginaInicial': (context) => HomePage(),
+        });
   }
 }
 

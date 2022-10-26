@@ -1,5 +1,6 @@
 
 import 'package:pet_house/banco/entidades/animal.dart';
+import 'package:pet_house/banco/entidades/dono.dart';
 import 'package:pet_house/banco/sqlite/conexao.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -54,7 +55,8 @@ class AnimalDAO {
         return Animal(
             id: linha['id'] as int,
             nome: linha['nome'].toString(),
-            raca: linha['raca'].toString());
+            raca: linha['raca'].toString(),
+        );
       }).toList();
       return animais;
     } catch (e) {

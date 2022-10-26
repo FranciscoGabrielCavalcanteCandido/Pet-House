@@ -18,11 +18,21 @@ class _LoginState extends State<Login> {
         backgroundColor: Colors.black,
       ),
       body: Container(
-        color: Colors.purple,
-        padding: EdgeInsets.only(
-          top: 60,
-          left: 40,
-          right: 40,
+        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.purple,
+              Colors.deepPurple,
+            ],
+            stops: [
+              0.4,
+              0.7,
+            ],
+            tileMode: TileMode.repeated,
+          ),
         ),
         child: ListView(children: <Widget>[
           Image.asset("images/Pet_House-removebg-preview.png",
@@ -35,7 +45,7 @@ class _LoginState extends State<Login> {
             decoration: InputDecoration(
               labelText: "Nome de Usuário",
               labelStyle: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.w400,
                 fontSize: 20,
               ),
@@ -49,7 +59,7 @@ class _LoginState extends State<Login> {
             decoration: InputDecoration(
               labelText: "Senha",
               labelStyle: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.w400,
                 fontSize: 20,
               ),
@@ -67,8 +77,12 @@ class _LoginState extends State<Login> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.orange, shape: const StadiumBorder()),
-              child: Text('Entrar'),
-              onPressed: () => {},
+              child: Text(
+                'Entrar',
+                style: TextStyle(fontSize: 20),
+              ),
+              onPressed: () =>
+                  {Navigator.pushNamed(context, './paginaInicial')},
             ),
           ),
         ]),

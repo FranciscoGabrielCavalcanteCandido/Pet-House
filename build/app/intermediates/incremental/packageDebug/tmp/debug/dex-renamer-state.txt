@@ -1,4 +1,4 @@
-#Tue Oct 18 21:37:29 BRT 2022
+#Tue Oct 25 22:01:22 BRT 2022
 base.0=C\:\\Users\\Aluno\\Desktop\\Pet-House\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
