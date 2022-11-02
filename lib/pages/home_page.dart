@@ -31,12 +31,6 @@ class HomePage extends StatelessWidget {
         child: ListView(children: <Widget>[
           Image.asset("images/Pet_House-removebg-preview.png",
               width: 250, height: 150),
-          Container(
-            height: 20,
-          ),
-          SizedBox(
-            width: 20,
-          ),
           ElevatedButton.icon(
             onPressed: () => Navigator.pushNamed(context, './cadastroAnimal'),
             label: Text('Cadastrar Animal', style: TextStyle(fontSize: 20)),
@@ -77,7 +71,7 @@ class HomePage extends StatelessWidget {
             width: 20,
           ),
           ElevatedButton.icon(
-            onPressed: () => Navigator.pushNamed(context, ''),
+            onPressed: () => Navigator.pushNamed(context, './listaAnimal'),
             label: Text('Visualizar Animais', style: TextStyle(fontSize: 20)),
             style: ElevatedButton.styleFrom(
                 primary: Colors.orange, shape: const StadiumBorder()),

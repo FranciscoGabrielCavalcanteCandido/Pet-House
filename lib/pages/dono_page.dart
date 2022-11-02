@@ -56,21 +56,6 @@ class DonoPage extends StatelessWidget {
               width: 10,
             ),
             TextFormField(
-              onChanged: (value) => telefone,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: "Telefone",
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            TextFormField(
               onChanged: (value) => cpf = value,
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
@@ -128,7 +113,6 @@ class DonoPage extends StatelessWidget {
                 onPressed: () {
                   donoDAO.salvar(Dono(
                       nome: nome!,
-                      telefone: telefone!,
                       cpf: cpf!,
                       cidade: cidade!,
                       bairro: bairro!));

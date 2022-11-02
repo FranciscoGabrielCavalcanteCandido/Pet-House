@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_house/banco/entidades/dono.dart';
+import 'package:pet_house/pages/animal_list.dart';
 import 'package:pet_house/pages/animal_page.dart';
 import 'package:pet_house/pages/dono_page.dart';
 import 'package:pet_house/pages/home_page.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           './cadastroAnimal': (context) => AnimalPage(),
           './cadastroDono': (context) => DonoPage(),
           './paginaInicial': (context) => HomePage(),
+          './listaAnimal': (context) => AnimalList(),
         });
   }
 }
