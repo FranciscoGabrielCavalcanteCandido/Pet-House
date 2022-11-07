@@ -13,8 +13,8 @@ final criar_banco = [
       cidade TEXT NOT NULL,
       bairro TEXT NOT NULL
     )
-"""
-      """
+""",
+  """
     CREATE TABLE servico(
       id INTEGER NOT NULL PRIMARY KEY,
       nome TEXT NOT NULL,

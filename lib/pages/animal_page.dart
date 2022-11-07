@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:pet_house/banco/entidades/animal.dart';
 import 'package:pet_house/banco/sqlite/animalDAO.dart';
 
-class AnimalPage extends StatelessWidget {
+class AnimalPage extends StatefulWidget {
+  @override
+  State<AnimalPage> createState() => _AnimalPageState();
+}
+
+class _AnimalPageState extends State<AnimalPage> {
   String? nome;
+
   String? raca;
+
   AnimalDAO animalDAO = AnimalDAO();
 
   @override

@@ -32,8 +32,8 @@ class HomePage extends StatelessWidget {
           Image.asset("images/Pet_House-removebg-preview.png",
               width: 250, height: 150),
           ElevatedButton.icon(
-            onPressed: () => Navigator.pushNamed(context, './cadastroAnimal'),
-            label: Text('Cadastrar Animal', style: TextStyle(fontSize: 20)),
+            onPressed: () => Navigator.pushNamed(context, './listaAnimal'),
+            label: Text(' Animais', style: TextStyle(fontSize: 20)),
             style: ElevatedButton.styleFrom(
                 primary: Colors.orange, shape: const StadiumBorder()),
             icon: const Icon(Icons.pets),
@@ -45,8 +45,8 @@ class HomePage extends StatelessWidget {
             width: 20,
           ),
           ElevatedButton.icon(
-            onPressed: () => Navigator.pushNamed(context, './cadastroDono'),
-            label: Text('Cadastrar Dono', style: TextStyle(fontSize: 20)),
+            onPressed: () => Navigator.pushNamed(context, './listaDono'),
+            label: Text('Dono', style: TextStyle(fontSize: 20)),
             style: ElevatedButton.styleFrom(
                 primary: Colors.orange, shape: const StadiumBorder()),
             icon: const Icon(Icons.person),
@@ -56,39 +56,6 @@ class HomePage extends StatelessWidget {
           ),
           SizedBox(
             width: 20,
-          ),
-          ElevatedButton.icon(
-            onPressed: () => Navigator.pushNamed(context, ''),
-            label: Text('Cadastrar Serviço', style: TextStyle(fontSize: 20)),
-            style: ElevatedButton.styleFrom(
-                primary: Colors.orange, shape: const StadiumBorder()),
-            icon: const Icon(Icons.app_registration),
-          ),
-          Container(
-            height: 20,
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          ElevatedButton.icon(
-            onPressed: () => Navigator.pushNamed(context, './listaAnimal'),
-            label: Text('Visualizar Animais', style: TextStyle(fontSize: 20)),
-            style: ElevatedButton.styleFrom(
-                primary: Colors.orange, shape: const StadiumBorder()),
-            icon: const Icon(Icons.remove_red_eye_sharp),
-          ),
-          Container(
-            height: 20,
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          ElevatedButton.icon(
-            onPressed: () => Navigator.pushNamed(context, ''),
-            label: Text('Visualizar Donos', style: TextStyle(fontSize: 20)),
-            style: ElevatedButton.styleFrom(
-                primary: Colors.orange, shape: const StadiumBorder()),
-            icon: const Icon(Icons.remove_red_eye_sharp),
           ),
         ]),
       ),

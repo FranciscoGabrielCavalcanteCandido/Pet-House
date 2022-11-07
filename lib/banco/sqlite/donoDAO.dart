@@ -39,4 +39,26 @@ class DonoDAO {
       throw Exception('Não foi possível retornar a consulta do registro $id');
     }
   }
+
+  Future<List<Dono>> listar() async {
+    late Database db;
+    try {
+      const sql = 'SELECT * FROM dono';
+      db = await Conexao.getConexao();
+      List<Map<String, Object?>> resultado = (await db.rawQuery(sql));
+      if (resultado.isEmpty) throw Exception('Sem registros');
+      List<Dono> donos = resultado.map((linha) {
+        return Dono(
+          id: linha['id'] as int,
+          nome: linha['nome'].toString(),
+          cpf: linha['cpf'].toString(),
+          cidade: linha['cidade'].toString(),
+          bairro: linha['bairro'].toString(),
+        );
+      }).toList();
+      return donos;
+    } catch (e) {
+      throw Exception('erro no método listar dono');
+    }
+  }
 }

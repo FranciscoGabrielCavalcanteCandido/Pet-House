@@ -3,9 +3,17 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:pet_house/banco/entidades/animal.dart';
 import 'package:pet_house/banco/sqlite/animalDAO.dart';
+import 'package:pet_house/pages/animal_page.dart';
 
-class AnimalList extends StatelessWidget {
+class AnimalList extends StatefulWidget {
+  @override
+  State<AnimalList> createState() => _AnimalListState();
+}
+
+class _AnimalListState extends State<AnimalList> {
   AnimalDAO animalDAO = AnimalDAO();
+
+  late Animal animal;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +22,14 @@ class AnimalList extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Animais'),
         backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+              onPressed: () => Navigator.pushNamed(context, './cadastroAnimal')
+                      .then((value) {
+                    setState(() {});
+                  }),
+              icon: Icon(Icons.add))
+        ],
       ),
       body: FutureBuilder(
         future: animalDAO.listar(),
@@ -41,12 +57,31 @@ class AnimalList extends StatelessWidget {
                           animal.nome.toString(),
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
-                        trailing: IconButton(
-                          icon: const Icon(Icons.pets),
-                          onPressed: () => Navigator.pushNamed(
-                                  context, './listaAnimal',
-                                  arguments: animais)
-                              .then((value) {}),
+                        subtitle: Text(
+                          '''Raça: ${animal.raca.toString()}''',
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        ),
+                        trailing: SizedBox(
+                          width: 100,
+                          child: Row(
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.delete),
+                                onPressed: () => AnimalDAO()
+                                    .excluir(animal.id)
+                                    .then((value) {
+                                  setState(() {});
+                                }),
+                              ),
+                              IconButton(
+                                  onPressed: () => AnimalDAO()
+                                          .consultar(animal.id)
+                                          .then((value) {
+                                        setState(() {});
+                                      }),
+                                  icon: Icon(Icons.edit)),
+                            ],
+                          ),
                         ),
                       ),
                     ),

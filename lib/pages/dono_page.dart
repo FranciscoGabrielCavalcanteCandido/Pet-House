@@ -4,11 +4,20 @@ import 'package:pet_house/banco/entidades/animal.dart';
 import 'package:pet_house/banco/entidades/dono.dart';
 import 'package:pet_house/banco/sqlite/donoDAO.dart';
 
-class DonoPage extends StatelessWidget {
+class DonoPage extends StatefulWidget {
+  @override
+  State<DonoPage> createState() => _DonoPageState();
+}
+
+class _DonoPageState extends State<DonoPage> {
   String? nome;
+
   int? telefone;
+
   String? cpf;
+
   String? cidade;
+
   String? bairro;
 
   DonoDAO donoDAO = DonoDAO();
